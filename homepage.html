@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+
+
+
+
+
+
+   
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <li><img class="sideBanner" src="DecathlonAU_Side Banner_SA_31-Mar-2020_3700x1100_V1_R1-min.jpg"></a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">About</a></li>
+</div>
+
+<div id="main">
+    <div class="top-container"></div>
+    <div class="header" id="myHeader">  
+        <span style="font-size:30px;cursor:pointer;color: azure; position: fixed; background-color: #333333; padding-left: 5px;" onclick="openNav()">&#9776;</span>
+        <a href="#home"></a>
+        <a href="#open">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#about">About</a>
+        <a href="#about">About</a>
+        <a href="#about">About</a>
+        <a href="#about">About</a>
+        <a href="#about">About</a>
+    </div>
+    <h2>Hello</h2>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+</div>
+</div>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+    <ul id="myUL">
+      <li><a href="#">Adele</a></li>
+      <li><a href="#">Agnes</a></li>
+    
+      <li><a href="#">Billy</a></li>
+      <li><a href="#">Bob</a></li>
+    
+      <li><a href="#">Calvin</a></li>
+      <li><a href="#">Christina</a></li>
+      <li><a href="#">Vincent</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+   
+</body>
+</html> 
